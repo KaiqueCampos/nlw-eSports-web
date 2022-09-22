@@ -25,15 +25,20 @@ function App() {
 
   useEffect(() => {
     axios('http://localhost:3333/games').then(response => {
-        setGames(response.data);
-      })
+      setGames(response.data);
+    })
   }, [])
 
   return (
-    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
-      <img src={logoImg} alt="logo NLW eSports" />
+    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20 sm:h-screen sm:mb-0">
+      
+      <img
+        src={logoImg}
+        alt="logo NLW eSports"
+        className='sm:w-44'
+      />
 
-      <h1 className="text-6xl text-white font-black mt-20">
+      <h1 className="text-6xl text-white font-black mt-20 sm:text-4xl sm:mt-10">
         Seu <span className="text-transparent bg-nlw-gradient bg-clip-text">duo</span> está aqui.
       </h1>
 
