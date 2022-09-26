@@ -3,13 +3,13 @@ import axios from 'axios';
 
 import { CreateAdBanner } from './components/CreateAdBanner';
 import { GameBanner } from './components/GameBanner';
+import { CreateAdModal } from './components/CreateAdModal';
 
 import * as Dialog from '@radix-ui/react-dialog';
 
 import logoImg from './assets/logo-nlw-esports.svg';
 import './styles/main.css';
-import { CreateAdModal } from './components/CreateAdModal';
-
+import { GamesSlider } from './components/GamesSlider';
 interface game {
   id: string;
   title: string;
@@ -30,33 +30,37 @@ function App() {
   }, [])
 
   return (
-    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20 sm:h-screen sm:mb-0">
-      
+    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20 sm:h-screen sm:my-0">
+
       <img
         src={logoImg}
         alt="logo NLW eSports"
-        className='sm:w-44'
+        className='sm:w-44 sm:mt-10'
       />
 
       <h1 className="text-6xl text-white font-black mt-20 sm:text-4xl sm:mt-10">
         Seu <span className="text-transparent bg-nlw-gradient bg-clip-text">duo</span> está aqui.
       </h1>
 
-      <div className="grid grid-cols-6 gap-6 mt-16">
+      {
+        games.length > 0 ? (
+          <GamesSlider>
+            {games.map(game => {
 
-        {games.map(game => {
-          return (
-            <GameBanner
-              key={game.id}
-              bannerUrl={game.bannerUrl}
-              title={game.title}
-              adsCount={game._count.ads}
-            />
-          )
-        })}
+              return (
+                <GameBanner
+                  key={game.id}
+                  bannerUrl={game.bannerUrl}
+                  title={game.title}
+                  adsCount={game._count.ads}
+                  sliderIndex={games.indexOf(game) + 1}
+                />
+              )
+            })}
 
-
-      </div>
+          </GamesSlider>
+        ) : ''
+      }
 
       <Dialog.Root>
         <CreateAdBanner />
