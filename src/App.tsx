@@ -30,7 +30,7 @@ function App() {
   }, [])
 
   return (
-    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20 sm:h-screen sm:my-0">
+    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20 sm:min-h-screen sm:my-0">
 
       <img
         src={logoImg}
@@ -38,7 +38,7 @@ function App() {
         className='sm:w-44 sm:mt-10'
       />
 
-      <h1 className="text-6xl text-white font-black mt-20 sm:text-4xl sm:mt-10">
+      <h1 className="text-6xl text-white font-black mt-20 sm:text-3xl sm:mt-10">
         Seu <span className="text-transparent bg-nlw-gradient bg-clip-text">duo</span> está aqui.
       </h1>
 
