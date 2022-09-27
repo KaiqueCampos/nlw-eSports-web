@@ -30,15 +30,15 @@ function App() {
   }, [])
 
   return (
-    <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20 sm:min-h-screen sm:my-0">
+    <div className="md:max-w-2xl lg:max-w-3xl 2xl:max-w-[1344px] mx-auto flex flex-col items-center my-20 sm:min-h-screen sm:my-0 ">
 
       <img
         src={logoImg}
         alt="logo NLW eSports"
-        className='sm:w-44 sm:mt-10'
+        className='sm:w-44 sm:mt-10 lg:w-40 xl:w-32 2xl:w-44'
       />
 
-      <h1 className="text-6xl text-white font-black mt-20 sm:text-3xl sm:mt-10">
+      <h1 className="sm:text-3xl md:text-5xl lg:text-3xl 2xl:text-5xl text-white font-black sm:mt-10 md:mt-12 lg:mt-12 xl:mt-7 2xl:mt-20">
         Seu <span className="text-transparent bg-nlw-gradient bg-clip-text">duo</span> está aqui.
       </h1>
 

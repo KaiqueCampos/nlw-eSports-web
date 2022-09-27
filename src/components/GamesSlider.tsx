@@ -18,24 +18,21 @@ export function GamesSlider({ children }: Props) {
             "(min-width: 620px)": {
                 slides: { perView: 3, spacing: 15 },
             },
-            "(min-width: 768px)": {
+            "(min-width: 1024px)": {
                 slides: { perView: 4, spacing: 15 },
             },
-            "(min-width: 1024px)": {
+            "(min-width: 1280px)": {
                 slides: { perView: 5, spacing: 15 },
             },
-            "(min-width: 1280px)": {
+            "(min-width: 1536px)": {
                 slides: { perView: 6, spacing: 15 },
-            },
-            "(min-width: 1920px)": {
-                slides: { perView: 7, spacing: 15 },
             },
         },
         slides: { perView: 1.5, spacing: 15 },
     })
 
     return (
-        <div ref={ref} className="keen-slider mt-16 sm:px-5 sm:mt-10">
+        <div ref={ref} className="keen-slider  sm:px-5 sm:mt-auto md:mt-12 xl:mt-8 2xl:mt-16 ">
             {children}
         </div>
     )
